@@ -1,0 +1,11 @@
+services:
+  - type: worker
+    name: meu-bot-consultor
+    runtime: python
+    buildCommand: "pip install --upgrade pip && pip install -r requirements.txt"
+    startCommand: "python bot_consultor.py"
+    envVars:
+      - key: TOKEN
+        sync: false
+      - key: GEMINI_API_KEY
+        sync: false
