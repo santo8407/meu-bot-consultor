@@ -52,10 +52,13 @@ async def analisar(update: Update, context: ContextTypes.DEFAULT_TYPE):
     except Exception as e:
         await update.message.reply_text(f"Erro ao analisar: {str(e)}")
 
+# ... (mantenha todo o início do código, incluindo as importações e configurações)
+
 if __name__ == "__main__":
-    # Inicia o bot do Telegram
+    # Configura o bot
     app_bot = Application.builder().token(TOKEN).build()
     app_bot.add_handler(CommandHandler("analisar", analisar))
     
-    logging.info("Bot iniciado com sucesso na nuvem.")
+    # Inicia o bot do Telegram em paralelo com o servidor web
+    print("Iniciando o bot do Telegram...")
     app_bot.run_polling()
