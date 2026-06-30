@@ -56,7 +56,8 @@ if __name__ == "__main__":
         
         app_bot.add_handler(CommandHandler("start", start))
         app_bot.add_handler(CommandHandler("analisar", analisar))
-        app_bot.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, echo))
+        # Filtro corrigido com parênteses
+        app_bot.add_handler(MessageHandler(filters.TEXT & (~filters.COMMAND), echo))
         
         print("Bot rodando com sucesso!")
         app_bot.run_polling()
